@@ -4,12 +4,30 @@ def start_up():
     print("I am going to give you the chance to earn it.")
 
 def questions():
-    print("What is your name?  ")
+    questions_list = []
+    answer_list = []
+
+    questions_list.append( input("What is your name?  "))
+
+    print("Great!")
+    questions_list.append( input("What is your quest?  "))
+
+    print("Really? Well then the final question!")
+    questions_list.append( input("What is your favorite color?  "))
+
+    answer_list.append( len(questions_list[0]))
+    answer_list.append( len(questions_list[1]))
+    answer_list.append( len(questions_list[2]))
+
+    truth = sum(answer_list)
+    if truth > 50:
+        pass
+    
 
 start_up()
 while True:
-    new_item = input("> ")
-    if new_item == "NEXT":
+    new_item = input("> ").lower()
+    if new_item == "next":
         questions()
 
 #grail = "The Holy Grail"
@@ -19,10 +37,3 @@ while True:
     #print("Well Done! You have beaten the game!")
 #else:
     #print("Welcome to the adenture!")
-
-
-player_list = []
-
-def add_to_list(item):
-    player_list.append(item)
-
