@@ -1,7 +1,48 @@
 def start_up():
+    print("   ")
+    print("--THE HOLY GRAIL RIDDLES--")
+    print("   ")
+    print("TYPE BEGIN TO START")
+
+def welcome():
+    print("   ")
     print("Welcome to the secret cave.")
+    print("   ")
     print("You have found the resting place of the Holy Grail.")
+    print("   ")
     print("I am going to give you the chance to earn it.")
+    print("   ")
+    What()
+
+def What():
+
+    yes_or_no_list = []
+
+    yes_or_no_list.append(input("You would like to earn the grail yes?  ").lower())
+
+    if "yes" in yes_or_no_list:
+        print("   ")
+        print("Very Good. First I will give you three questions.")
+        print("   ")
+        print("Your answers will determine your riddle.")
+        print("   ")
+        questions()
+
+    if "no" in yes_or_no_list:
+        print("   ")
+        print("Oh. You must be looking for the batrooms then. Those are three doors down on the left.")
+        print("   ")
+        print("Off you go then.")
+        print("   ")
+        print("--THE END?--")
+
+    else:
+        print("   ")
+        print("What was that? It is so hard to hear in this helmet.")
+        print("   ")
+        What()
+
+
 
 def questions():
     questions_list = []
@@ -29,11 +70,7 @@ while True:
     new_item = input("> ").lower()
     if new_item == "next":
         questions()
-
-#grail = "The Holy Grail"
-
-#grail = False
-#if grail is True:
-    #print("Well Done! You have beaten the game!")
-#else:
-    #print("Welcome to the adenture!")
+    if new_item == "begin":
+        welcome()
+    else:
+        print("-Please type next to continue.-")
