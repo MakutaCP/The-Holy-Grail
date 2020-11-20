@@ -6,7 +6,7 @@ def start_up():
 
 def welcome():
     print("   ")
-    print("Welcome to the secret cave.")
+    print("Welcome to the secret cave! Located in Las Vegas.")
     print("   ")
     print("You have found the resting place of the Holy Grail.")
     print("   ")
@@ -40,23 +40,21 @@ def What():
         print("   ")
         What()
 
-class Player:
-    Rid1 = False
-    Rid2 = False
-    Rid3 = False
-    Rid4 = False
-    Rid5 = False
-
 def questions():
     questions_list = []
     answer_list = []
 
+    print("   ")
     questions_list.append( input("What is your name?  "))
 
+    print("   ")
     print("Great!")
+    print("   ")
     questions_list.append( input("What is your quest?  "))
 
+    print("   ")
     print("Really? Well then the final question!")
+    print("   ")
     questions_list.append( input("What is your favorite color?  "))
 
     answer_list.append( len(questions_list[0]))
@@ -64,13 +62,25 @@ def questions():
     answer_list.append( len(questions_list[2]))
 
     truth = sum(answer_list)
+    print("   ")
+    print("Your answers gives me the number...")
+    print(truth)
+
+    print("   ")
+    print("And that means you are...")
     if truth < 30:
         print("   ")
-        print("Oh the strong quiet type are you? Well do I have a riddle for you.")
+        print("Oh the quiet type are you? Well do I have a riddle for you.")
         print("   ")
         Rid1()
-    elif truth >= 30 and truth < 50:
-        pass
+    elif truth >= 30 and truth <= 60:
+        print("   ")
+        print("A average adventuring type. Above average in general. You shall have this riddle!")
+        print("   ")
+    elif truth > 60:
+        print("   ")
+        print("A very wordy person. Maybe a wizard? Well a fitting riddle I will give you!")
+        print("   ")
     else:
         print("   ")
         print("Wait a second some thing is fishy here. And it is not my fish Eric.")
@@ -84,26 +94,49 @@ def Rid1():
     pass
 
 def Rid2():
-    pass
+    Rid2_ans = []
+    print("   ")
+    print("There are five cups on the table infront of you.")
+    print("   ")
+    print("The first three are full of water while the fourth and fifth is empty.")
+    print("   ")
+    print("Only one cup needs to be moved to make make the first, third, and fifth cups full of water.")
+    print("   ")
+    Rid2_ans.append( input("Give me the number of which cup needs to move.  "))
+
+    if Rid2_ans == "2":
+        congrats()
+    else:
+        fail()
+
 
 def Rid3():
     pass
 
-def Rid4():
-    pass
-
-def Rid5():
-    pass
     
 
 start_up()
 while True:
     new_item = input("> ").lower()
-    if new_item == "next":
-        questions()
-    elif new_item == "begin":
+    if new_item == "begin":
         welcome()
+    elif new_item == "result":
+        secret()
     elif new_item == "quit":
         exit()
     else:
         print("-Please enter a valid command-")
+
+def congrats():
+    print("   ")
+    print("--CONGRADULATIONS! YOU HAVE FOUND THE HOLY GRAIL--")
+    print("   ")
+    print("--GIVE THE COMMAND RESULT AT THE BEGINING TO FIND YOUR SECRET--")
+
+def fail():
+    print("   ")
+    print("--YOU HAVE FAILED. PLEASE LEAVE AND NEVER RETURN!--")
+
+def secret():
+    print("HOW DID YOU FIND THIS PLACE?!?")
+    print("YOU MUST HAVE THE GRAIL.")
